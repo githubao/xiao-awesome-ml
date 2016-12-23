@@ -58,7 +58,7 @@ def translator(clusters, paragraph_list):
     return list(map(cluster_translator, clusters))
 
 
-@log_time
+# @log_time
 def cluster_paragraphs(paragraphs, num_clusters=2):
     word_lists = make_word_lists(paragraphs)
     word_vectors = make_word_vectors(word_lists)
