@@ -35,7 +35,7 @@ def process_demo():
     # sql = 'select id,pid,content,reply,time from comment WHERE pid = 100066338427'
     # sql = 'select id,pid,content,reply,time from comment ORDER by random() limit 5000'
     # sql = 'select id,pid,content,reply,time from comment limit 10000'
-    sql = 'select id,pid,content,reply,time from comment limit 100000,10000'
+    sql = 'select id,pid,content,reply,time from comment ORDER by random() limit 10000'
     # sql = 'select id,pid,content,reply,time from comment'
     replys = my_sql.get_sql(sql)
 
