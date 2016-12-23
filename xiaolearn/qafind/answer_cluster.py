@@ -14,21 +14,20 @@
 @time: 2016/12/8 20:19
 """
 
-from collections import defaultdict
-from xiaolearn.util.timer import log_time
-from xiaolearn.qarank.preprocess import rm_line_punc
-import traceback
-import sys
-
 import logging
-from xiaolearn.util.settings import FILE_PATH
+import sys
+import traceback
+from collections import defaultdict
+
 from xiaolearn.cluster.vectorizer_paragraph import cluster_paragraphs
-from xiaolearn.test import test_case
+from xiaolearn.qarank.preprocess import rm_line_punc
+from xiaolearn.util.timer import log_time
 
 # TRAIN_FILE = FILE_PATH + 'qafind/smoothy_f_corpus.txt'
 # OUT_FILE = FILE_PATH + 'qafind/clustered_sf_corpus.txt'
 
 DEFAULT_SCORE = 0.4
+
 
 @log_time
 def cluster():
@@ -130,4 +129,3 @@ def test():
 
 if __name__ == '__main__':
     main()
-    # test_case()

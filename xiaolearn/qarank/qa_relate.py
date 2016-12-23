@@ -21,7 +21,7 @@ import os
 import sys
 import traceback
 from operator import itemgetter
-import logging
+from time import time
 
 import numpy as np
 
@@ -32,8 +32,6 @@ from xiaolearn.seg.segment import *
 from xiaolearn.simi.similarity import get_setence_vec, get_tfidf_vec, numpy_vec_distance
 from xiaolearn.util.settings import FILE_PATH
 from xiaolearn.util.timer import log_time
-from xiaolearn.test import test_case
-from time import time
 
 VECTOR_FILE = FILE_PATH + 'qarank/qa_relate/vector/{:02d}.txt'
 OUT_PATH = FILE_PATH + 'qarank/qa_relate/out/{}/'
@@ -398,4 +396,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    # test_case()

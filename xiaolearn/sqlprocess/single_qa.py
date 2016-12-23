@@ -14,12 +14,11 @@
 @time: 2016/12/7 13:37
 """
 
-from xiaolearn.sqlprocess.mysqlite import SqlLite
 import re
 import traceback
-import sys
-from xiaolearn.util.settings import FILE_PATH
-from xiaolearn.test import test_case
+
+from xiaolearn.sqlprocess.mysqlite import SqlLite
+from xiaolearn.test import *
 
 # OUT_FILE = FILE_PATH + 'sqlprocess/raw_corpus.txt'
 
@@ -134,4 +133,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    # test_case()
