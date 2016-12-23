@@ -38,6 +38,9 @@ from xiaolearn.util.settings import FILE_PATH, get_logger
 logger = get_logger()
 
 def tmp():
+    pass
+
+def tmp33():
     t = [(1,20),(2,30)]
     for idx,cnt in t:
         print(idx)
