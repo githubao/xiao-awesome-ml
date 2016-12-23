@@ -29,7 +29,7 @@ from xiaolearn.util.timer import log_time
 DEFAULT_SCORE = 0.4
 
 
-@log_time
+# @log_time
 def cluster():
     dic = defaultdict(set)
 
