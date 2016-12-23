@@ -57,7 +57,7 @@ def cluster():
 
         # 少于三个，不需要聚类
         if ans_len <= 3:
-            logging.info('{} less than 3 answers'.format(ans_len))
+            logging.debug('{} less than 3 answers'.format(ans_len))
             cluster_num = 1
             for line in lines:
                 fw.write("{}\t{}\t{:0.5f}\n".format(line, cluster_num, DEFAULT_SCORE))

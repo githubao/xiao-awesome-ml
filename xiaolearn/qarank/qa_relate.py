@@ -129,7 +129,6 @@ def rank_qa(line, num):
 
     # 问题的相关度
     logging.info("{} simi question to cal".format(len(q_simi_idx)))
-    # logging.info("question: {} simis is {}".format(q, [QA_VEC_MAP[idx][1] for idx in q_simi_idx]))
     q_list = []
     for idx in q_simi_idx:
         if not idx in QA_VEC_MAP:
@@ -206,9 +205,13 @@ def get_most_simi(seq, pos, num):
 
     max_count = sorted_tuple[0][1]
     logging.debug("{} has {} simi words with {} item(s)".format(seq, max_count, len(sorted_tuple)))
-    # if max_count == 1:
-    #     logging.error("{} only one simi word with {} item(s)".format(seq, len(sorted_tuple)))
-    #     return
+
+    # 只有一个相同词语，而且句子超过1000个
+    if max_count == 1 and len(sorted_tuple) > 1000:
+        logging.info("question: {} simis is {}".format(q, [QA_VEC_MAP[idx][1] for idx in sorted_tuple]))
+
+        logging.debug("{} only one simi word with {} item(s)".format(seq, len(sorted_tuple)))
+        return
 
     sorted_filtered = filter(lambda x: x[1] >= max_count, sorted_tuple)
 
