@@ -207,8 +207,13 @@ def get_most_simi(seq, pos, num):
     logging.debug("{} has {} simi words with {} item(s)".format(seq, max_count, len(sorted_tuple)))
 
     # 只有一个相同词语，而且句子超过1000个
-    if max_count == 1 and len(sorted_tuple) > 1000:
-        logging.info("question: {} simis is {}".format(seq, [QA_VEC_MAP[idx][1] for idx,score in sorted_tuple]))
+    if max_count == 1:
+        if len(sorted_tuple) > 20:
+            sorted_tuple = sorted_tuple[:20]
+
+        if len(sorted_tuple) < 500:
+            logging.info("simi with {} items".format(len(sorted_tuple)))
+            logging.info("question: {} simis is {}".format(seq, [QA_VEC_MAP[idx][1] for idx,score in sorted_tuple]))
 
         logging.debug("{} only one simi word with {} item(s)".format(seq, len(sorted_tuple)))
         return
