@@ -1,0 +1,16 @@
+cd xiao/word2vec
+
+1， 解析语料
+python parse_wiki.py d:/dls/zhwiki-latest-pages-articles.xml.bz2 file/corpus.zhwiki.txt
+
+2，繁简体转化
+python tra2sim.py file/corpus.zhwiki.txt file/corpus.zhwiki.simplified.txt
+
+3，去除除了英文和空格
+ python rm_en_black.py file/corpus.zhwiki.simplified.txt file/corpus.zhwiki.done.txt
+
+4，分词，空格作为分隔符
+python segment.py file/corpus.zhwiki.done.txt file/corpus.zhwiki.segwithspace.txt
+
+5，训练
+python train file/corpus.zhwiki.segwithspace.txt file/zh_wiki_vectors.model file/zh_wiki_vectors.bin

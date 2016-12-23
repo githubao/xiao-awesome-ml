@@ -1,0 +1,10 @@
+1，文件搜索路径
+windows 添加搜索路径：
+C:\Users\BaoQiang\AppData\Local\Programs\Python\Python35\Lib\site-packages\
+
+mypkpth.pth 文件里面添加内容
+D:\code\NLP_Python\xiao-awesome-ml
+
+2，跑爬虫
+cd xiao/scrapy/baidu_search
+scrapy crawl baidu_search
